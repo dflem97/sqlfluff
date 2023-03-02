@@ -3,7 +3,7 @@
 # computed by SQLFluff when running the tests. Please run
 # `python test/generate_parse_fixture_yml.py`  to generate them after adding or
 # altering SQL files.
-_hash: 38cc97435a4c56f52a92245df291dd02dcbfef74d01c9128bb47e4b3e10c68ca
+_hash: 01851eb3d505217d4b574084ad3842b52e7680b8484de90e1ec7ee8e10746637
 file:
 - statement:
     collect_statistics_statement:
@@ -45,4 +45,26 @@ file:
       - naked_identifier: DB_1
       - dot: .
       - naked_identifier: TABLE_1
+- statement_terminator: ;
+- statement:
+    collect_statistics_statement:
+    - keyword: COLLECT
+    - keyword: STATS
+    - keyword: COLUMN
+    - bracketed:
+        start_bracket: (
+        column_reference:
+          naked_identifier: dept_code
+        end_bracket: )
+    - keyword: 'ON'
+    - table_reference:
+        naked_identifier: employee
+- statement_terminator: ;
+- statement:
+    collect_statistics_statement:
+    - keyword: COLLECT
+    - keyword: STATS
+    - keyword: 'ON'
+    - table_reference:
+        naked_identifier: employee
 - statement_terminator: ;

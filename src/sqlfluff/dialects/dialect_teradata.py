@@ -214,7 +214,7 @@ class TdCollectStatisticsStatementSegment(BaseSegment):
     match_grammar = Sequence(
         "COLLECT",
         Ref.keyword("SUMMARY", optional=True),
-        OneOf("STATISTICS", "STAT"),
+        OneOf("STATISTICS", "STAT", "STATS"),
         Sequence(
             "USING",
             Delimited(
